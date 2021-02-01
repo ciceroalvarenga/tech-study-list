@@ -1,0 +1,92 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "tech": "React",
+      "difficulty": "Medium",
+      "description": "blablabla",
+      "tags": [
+        "javascript",
+        "react",
+        "tdd"
+      ]
+    },
+    {
+      "id": 2,
+      "tech": "React Native",
+      "difficulty": "Medium",
+      "description": "blablabla",
+      "tags": [
+        "javascript",
+        "react",
+        "tdd"
+      ]
+    },
+    {
+      "id": 3,
+      "tech": "Node",
+      "difficulty": "Medium",
+      "description": "blablabla",
+      "tags": [
+        "javascript",
+        "react",
+        "tdd"
+      ]
+    },
+    {
+      "id": 4,
+      "tech": "Elixir",
+      "difficulty": "easy",
+      "description": "blablabla",
+      "tags": [
+        "javascript",
+        "react",
+        "tdd"
+      ]
+    },
+    {
+      "id": 5,
+      "tech": "Elixir",
+      "difficulty": "easy",
+      "description": "blablabla",
+      "tags": [
+        "javascript",
+        "react",
+        "tdd"
+      ]
+    },
+    {
+      "id": 6,
+      "tech": "Elixir",
+      "difficulty": "easy",
+      "description": "blablabla",
+      "tags": [
+        "javascript",
+        "react",
+        "tdd"
+      ]
+    },
+    {
+      "id": 7,
+      "tech": "Elixir",
+      "difficulty": "easy",
+      "description": "blablabla",
+      "tags": [
+        "javascript",
+        "react",
+        "tdd"
+      ]
+    },
+    {
+      "id": 8,
+      "tech": "Elixir",
+      "difficulty": "easy",
+      "description": "blablabla",
+      "tags": [
+        "javascript",
+        "react",
+        "tdd"
+      ]
+    }
+  ]
+}
