@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Text } from 'react-native';
+import React, { useCallback, useState } from 'react';
+import { Text, TouchableOpacity, View } from 'react-native';
+import Swipeable from 'react-native-gesture-handler/Swipeable';
 
 import {
   ListCardContainer,
@@ -20,6 +21,8 @@ interface PropsList {
   difficulty: string;
   description: string;
   tags: string[];
+  onSwipeFromLeft: any;
+  onRightPress: any;
 }
 
 const Todos: React.FC<PropsList> = ({
@@ -27,31 +30,45 @@ const Todos: React.FC<PropsList> = ({
   difficulty,
   description,
   tags,
+  onSwipeFromLeft,
+  onRightPress
 }) => {
   const [tag, setTag] = useState(tags)
 
-  return (
-    <Card>
-      <ListCardContainer>
-        <TodoColumn>
-          <TodoRow>
-            <TodoHeader>
-              <TodoName numberOfLines={1}>{nameTodo}</TodoName>
-              <TodoDifficulty numberOfLines={1}>{difficulty}</TodoDifficulty>
-            </TodoHeader>
+  const LeftActions = useCallback(() => {
+    return (
+      <TouchableOpacity onPress={() => console.log('add to cart')}>
+        <View>
+          <Text>Add to Cart</Text>
+        </View>
+      </TouchableOpacity>
+    );
+  }, []);
 
-            <TodoDescription numberOfLines={1}>{description}</TodoDescription>
-          </TodoRow>
-          <TagRow>
-            {tag.map(item => (
-              <TagView key={item}>
-                <TagText>{item}</TagText>
-              </TagView>
-            ))}
-          </TagRow>
-        </TodoColumn>
-      </ListCardContainer>
-    </Card>
+  return (
+    <Swipeable renderLeftActions={LeftActions}>
+      <Card>
+        <ListCardContainer>
+          <TodoColumn>
+            <TodoRow>
+              <TodoHeader>
+                <TodoName numberOfLines={1}>{nameTodo}</TodoName>
+                <TodoDifficulty numberOfLines={1}>{difficulty}</TodoDifficulty>
+              </TodoHeader>
+
+              <TodoDescription numberOfLines={1}>{description}</TodoDescription>
+            </TodoRow>
+            <TagRow>
+              {tag.map(item => (
+                <TagView key={item}>
+                  <TagText>{item}</TagText>
+                </TagView>
+              ))}
+            </TagRow>
+          </TodoColumn>
+        </ListCardContainer>
+      </Card>
+    </Swipeable>
   );
 };
 

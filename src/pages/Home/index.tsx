@@ -5,8 +5,6 @@ import api from '../../services/api';
 
 import { ContainerScrollView, Container, Header, TextHeader } from './styles';
 
-
-
 interface Techs {
   id: string;
   tech: string;
@@ -14,7 +12,6 @@ interface Techs {
   description: string;
   tags: string[];
 }
-
 
 const Home: React.FC = () => {
   const [techs, setTechs] = useState<Techs[]>([])
@@ -24,8 +21,6 @@ const Home: React.FC = () => {
       setTechs(response.data)
     })
   }, [])
-
-  console.log(techs)
 
   return (
     <Container>
@@ -37,6 +32,8 @@ const Home: React.FC = () => {
       <ContainerScrollView>
         {techs.map(item => (
           <Todos
+            onSwipeFromLeft={() => console.log('swiped from left!')}
+            onRightPress={() => console.log('pressed right!')}
             key={item.id}
             nameTodo={item.tech}
             difficulty={item.difficulty}
